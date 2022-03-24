@@ -32,3 +32,13 @@ print(f'位置: {position}')
 print(f'出生日期: {birth}')
 print(f'在第 {i} 場得分最高 {score_Max}')
 
+# Ch6_37.py 發揮 Python 精神
+James = [['Lebron James', 'SF', '12/30/84'], 23, 19, 22, 31, 18] #定義James串列
+games = len(James)
+score_Max = max(James[1:games])
+i = James.index(score_Max)
+name, position, birth = James[0]
+print(f'姓名: {name}')
+print(f'位置: {position}')
+print(f'出生日期: {birth}')
+print(f'在第 {i} 場得分最高 {score_Max}')
