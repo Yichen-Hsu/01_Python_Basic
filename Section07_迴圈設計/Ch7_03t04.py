@@ -9,3 +9,13 @@ for 迴圈可以讓程式將整個物件遍歷，又稱迭代。在遍歷期間�
 players = ['Hamburger', 'Loki', 'Raspberry Pi', 'James', 'Banana']
 for player in players:
     print(player)
+
+
+'''
+使用for迴圈時，如果程式碼區塊只有一行，他的語法格式可以用下列方式表達:
+for var in 可迭代物件: 程式碼區塊
+'''
+
+# Ch7_04.py
+players = ['Hamburger', 'Loki', 'Raspberry Pi', 'James', 'Banana']
+for player in players: print(player)
