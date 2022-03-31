@@ -7,7 +7,7 @@ hello1 = hello2
 
 而因為兩個變數所指的位址相同，所以新增項目時，兩個串列的內容將同步更改。
 '''
-
+# Ch6_43.py
 hello1 = [1, 2, 3, 4 ,5]
 hello2 = hello1
 print(f'列出hello1的位址: ', id(hello1))
