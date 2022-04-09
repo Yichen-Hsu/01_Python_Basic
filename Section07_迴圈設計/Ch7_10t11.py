@@ -36,3 +36,11 @@ print('-'*30)
 # Ch7_10.py 輸入數字，本程式會將此數字當作列印星星的數量。
 for i in range(int(input())):
     print('*', end='')
+
+# Ch7_11.py 銀行存款複利的累積軌跡
+money = 50000
+rate = 0.015
+n = 5
+for i in range(5):
+    money *= (1+rate)
+    print(f'第{i+1}年本金和: {int(money)}')
