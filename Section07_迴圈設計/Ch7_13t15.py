@@ -21,9 +21,17 @@ range(start, end, step)
 # print(squares)
 
 # Ch7_15.py 
-squares = []
-n = int(input("請輸入整數: "))
-if n > 10: n = 10
-for num in range(1, n+1):
-    squares.append(num**2)
-print(squares)
+# squares = []
+# n = int(input("請輸入整數: "))
+# if n > 10: n = 10
+# for num in range(1, n+1):
+#     squares.append(num**2)
+# print(squares)
+
+# Ch7_15_1.py 刪除串列內所有元素，Python沒有提供刪除整個串列元素的方法，不過我們可以使用for迴圈完成此工作。
+fruits = ['蘋果', '香蕉', '西瓜', '水蜜桃', '百香果']
+print("目前fruits串列: ", fruits)
+for fruit in fruits[:]:
+    fruits.remove(fruit)
+    print(f'刪除 {fruit}')
+    print('目前fruits串列: ', fruits)
