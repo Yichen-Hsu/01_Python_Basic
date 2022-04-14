@@ -35,3 +35,26 @@ for fruit in fruits[:]:
     fruits.remove(fruit)
     print(f'刪除 {fruit}')
     print('目前fruits串列: ', fruits)
+
+
+'''
+串列生成(generator)是一種使用迭代方式產生Python數據資料的方式，例如:可以產生串列、字典、集合等。
+這是結合迴圈與條件運算式的精簡程式碼的方法
+'''
+# Ch7_15_2.py 最初讀者可能會用的方式增加串列元素
+
+xlist = []
+xlist.append(0)
+xlist.append(1)
+xlist.append(2)
+xlist.append(3)
+xlist.append(4)
+xlist.append(5)
+print(xlist)
+
+# Ch7_15_3.py 使用for迴圈重新設計
+
+xlist = []
+for i in range(6):
+    xlist.append(i)
+print(xlist)
