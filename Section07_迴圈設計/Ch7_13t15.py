@@ -58,3 +58,11 @@ xlist = []
 for i in range(6):
     xlist.append(i)
 print(xlist)
+
+# Ch7_15_4.py 直接使用list()將range(n)當作是參數，重新設計上述程式。
+xlist = list(range(6))
+print(xlist)
+
+# Ch7_15_5.py 使用串列生程式產生串列。
+xlist = [n for n in range(6)]
+print(xlist)
