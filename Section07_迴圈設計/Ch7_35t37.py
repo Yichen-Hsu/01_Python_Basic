@@ -27,3 +27,14 @@ while True:
         break
     else:
         print(f'找{x}有什麼事?')
+
+# C7_37.py 使用while迴圈重新設計Ch7_24,py
+players = ['Curry', 'Jordan','James', 'Durant', 'Obama', 'Kevin', 'Lin']
+n = int(input("請輸入人數 = "))
+if n > len(players): n = len(players)
+index = 0
+while index < len(players):
+    if index == n:
+        break
+    print(players[index], end=" ")
+    index += 1
