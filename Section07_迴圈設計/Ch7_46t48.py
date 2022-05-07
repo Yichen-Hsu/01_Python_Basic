@@ -62,12 +62,7 @@ for i in range(len(sc)):
 sc.sort(key=lambda x:x[0])
 print('最後成績單')
 for i in range(len(sc)):
-    for j in range(len(sc)):
-        if j != i:
-            if sc[j][6] == sc[i][6]:
-                sc[j][7] = sc[i][7]
     print(sc[i])
-
 
 
 # Ch7_48.py 計算圓周率
