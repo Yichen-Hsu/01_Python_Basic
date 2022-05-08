@@ -8,6 +8,9 @@
 '''
 # Ch7_46.py
 
+from __future__ import with_statement
+
+
 sc = [
     [1, '海綿寶寶', 80, 95, 88, 0, 0, 0],
     [2, '天線寶寶', 98, 97, 93, 0, 0, 0],
@@ -79,3 +82,29 @@ for i in range(1, x+1):
     pi += 4 * ((-1)**(i+1)/(2*i-1))
     if i % 100000 == 0:
         print(f'當{i = : 7d} 時 PI = {pi:20.19f}')
+
+
+# Ch7_49.py 雞兔同籠 使用迴圈計算
+'''
+先假設雞有0隻，兔子有35隻，然後計算腳的數量，如果所獲得腳的數量不符合，可以每次增加一隻雞
+'''
+
+# chicken = 0
+# while True:
+#     rabbit = 35 - chicken
+#     if 2 * chicken + 4 * rabbit == 100:
+#         print(f'雞有{chicken}隻, 兔有{rabbit}隻')
+#     chicken += 1
+
+
+
+# Ch7_50.py 國王的麥粒
+
+sum = 0
+for i in range(64):
+    if i == 0:
+        wheat = 1
+    else:
+        wheat = 2 ** i
+    sum += wheat
+print(f'麥粒總共有 = {sum} 粒')
