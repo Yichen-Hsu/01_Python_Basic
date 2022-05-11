@@ -37,3 +37,43 @@ print('元祖mixed資料型態是: ', type(mixed))
 x = 5, 6, 5, 6, 8, 9
 print(type(x))
 print(x)
+
+
+'''
+讀取元組元素"()"，如果想要讀取元組內容和串列是一樣的用中括號"[]"。在Python中元組元素是從索引直0開始配置。所以如果是元組的第一筆元素，索引直是0
+第二筆元素索引直是1，依此類推，如下所示:
+
+mytuple[i]  #讀取索引i的元祖元素
+'''
+
+# Ch8_02.py 讀取元組元素，與一次指定多個變數值得應用
+numbers1 = (1, 2, 3, 4, 5)
+fruits =('apple', 'orange')
+val_tuple = (10,)
+print(numbers1[0])
+print(numbers1[4])
+print(fruits[0], fruits[1])
+print(val_tuple[0])
+x, y = ('apple', 'orange')
+print(x, y)
+x, y = fruits
+print(x, y)
+
+'''
+遍歷所有元組元素
+'''
+# Ch8_3.py  假設元組是由字串和數值組成，這個程式會列出元組所有元素內容。
+keys = ('magic', 'xaab', 9099) #定義元組元素是字串與數字
+for key in keys:
+    print(key)
+
+'''
+修改元組內容產生錯誤的實例
+
+元組元素內容不可被修改，因此會產生程式錯誤
+'''
+# Ch8_4.py 修改元組內容產生錯誤的實例
+fruits = ('apple', 'orange') #定義元組元素是字串
+print(fruits[0]) #列印元組fruits[0]
+fruits[0] = 'watermelon' #將元素內容改為watermelon
+print(fruits[0]) #列印元組fruits[0]
