@@ -67,3 +67,48 @@ fruits = {'西瓜':15, '香蕉':20, '水蜜桃':25}
 print('舊fruits字典內容', fruits)
 del fruits['西瓜']
 print(f'新fruits的字典是{fruits}')
+
+'''
+字典pop()的方法
+
+python字典的pop()方法可以刪除字典內特定的元素, 同時傳回所刪除的元素，它的語法格式如下:
+
+ret_value = dictObj.pop(key[, default])
+
+上述key是要搜尋刪除的元素的鍵，找到時就將該元素從字典內刪除，同時將刪除鍵的值回傳。
+當找不到key時則回傳default設定的內容，如果沒有設定則導致keyError，程式異常終止。
+'''
+
+# Ch9_09_1.py 刪除字典元素同使可以傳回所刪除字典元素的應用
+fruits = {'西瓜':15, '香蕉':20, '水蜜桃':25}
+print('舊fruits字典內容', fruits)
+objKey = '西瓜'
+value = fruits.pop(objKey)
+print('新frutis字典內容', fruits)
+print('刪除內容: ', objKey + ':' + str(value))
+
+# ex01 所刪除的元素不存在，導致'keyerror'，程式異常終止。
+'''
+num = {'a':1, 'b':2}
+value = num.pop('c')
+'''
+
+# ex02 所刪除的元素不存在, 列印 'does not exit'字串
+num = {'a':1, 'b':2}
+value = num.pop('c', 'does not exit')
+print(value)
+
+'''
+字典的popitem()方法
+
+python字典的popitem()方法可以隨機刪除字典內的元素，同時傳回所刪除的元素，所傳回的是元組(key, value), 它的語法格式如下:
+valueTap = dictObj.popitem() #可隨機刪除字典的元素
+如果字典是空的，會有錯誤異常產生
+'''
+
+# Ch9_09_2.py 列出所隨機刪除的字典元素內容。
+fruits = {'西瓜':15, '香蕉':20, '水蜜桃':25}
+print('舊fruits的字典內容', fruits)
+valueTup = fruits.popitem()
+print('新fruits字典內容', fruits)
+print('刪除的內容', valueTup)
