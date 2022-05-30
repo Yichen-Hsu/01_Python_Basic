@@ -112,3 +112,15 @@ print('舊fruits的字典內容', fruits)
 valueTup = fruits.popitem()
 print('新fruits字典內容', fruits)
 print('刪除的內容', valueTup)
+
+
+'''
+刪除字典所有的元素
+
+python有提供方法clear()可以將字典的所有元素刪除，此時字典仍然存在，不過將變成空的字典。
+'''
+# Ch9_10.py 使用clear()方法刪除fruits字典的所有元素。
+fruits = {'西瓜':15, '香蕉':20, '水蜜桃':25}
+print('舊的字典元素內容', fruits)
+fruits.clear()
+print('新的字典元素內容', fruits)
