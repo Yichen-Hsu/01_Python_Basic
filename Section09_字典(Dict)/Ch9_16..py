@@ -55,3 +55,43 @@ a = {1: 'Nissan', 2: 'Toyota'}
 b = {3: 'Lexus', 4: 'BMW'}
 c = {5: 'Benz'}
 print({**a, **b, **c})
+
+'''
+在資料處理中我們可能會碰上雙值序列的資料，如下所示:
+
+[['日本','東京']], ['泰國','曼谷'], ['英國','倫敦']]
+
+上述是普通的鍵/值序列，我們可以使用dict()將此序列轉成字典，其中雙值序列的第一個鍵，第二個是值。
+'''
+
+#Ch9_16_3.py 將雙值序列的串列轉成字典
+nation = [['日本','東京'], ['泰國','曼谷'], ['英國','倫敦']]
+nationDict = dict(nation)
+print(nationDict)
+
+'''
+如果上述元素是原組(tuple)，例如:('日本','東京')也可以完成相同的工作。
+'''
+
+#ex01 將雙值序列的串列轉成字典，其中元素是元組(tuple)。
+x = [('a','b'), ('c','d')]
+y = dict(x)
+print(y)
+
+#ex02 下列是雙值序列是元組(tuple)的其他實例。
+x = ('ab','cd','ed')
+y = dict(x)
+{'a':'b', 'c':'d', 'e':'d'}
+
+'''
+再談zip()
+其實我們也可以使用zip()快速建立字典。
+'''
+
+#ex01 zip的應用1
+mydict = dict(zip('abcde', range(5)))
+print(mydict)
+
+#ex02 zip的應用2
+mydict = dict(zip(['a','b','c'], range(3)))
+print(mydict)
