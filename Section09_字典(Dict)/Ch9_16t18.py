@@ -95,3 +95,75 @@ print(mydict)
 #ex02 zip的應用2
 mydict = dict(zip(['a','b','c'], range(3)))
 print(mydict)
+
+'''
+遍歷字典
+
+大型程式設計中，字典用久了會產生相當數量的元素，也許是幾千筆或幾十萬筆...或更多。
+因此在這邊將說明如何遍歷字典的鍵、值、鍵:值對。
+'''
+
+'''
+items()遍歷字典的鍵:值
+python有提供方法items()，可以讓我們取得字典"鍵:值"配對的元素，若是以Ch9_16.py的players字典為實例，可以使用for圈加上items()方法如下:
+
+for name, team in players.items():
+print("\n姓名:", name)
+print("隊名:", team)
+
+上述只要尚未完成遍歷字典，for迴圈將持續進行，如此就可以完成遍歷字典，同時傳回所有的"鍵:值"。
+'''
+
+#Ch9_17.py 列出players字典所有元素，相當於所有球員的資料。
+players = {
+'Stephen Curry':'Golden State Warriors',
+'Kevin Durant':'Golden State Warriors',
+'Lebron James':'Cleveland Cavaliers',
+'James Harden':'Houston Rockets',
+'Paul Gasol':'San Antonio Spurs'
+}
+
+for name, team in players.items():
+    print("\n姓名:", name)
+    print("隊名:", team)
+
+'''
+上述實例的執行結果雖然元素出現順序與程式編排順序相同，但須了解在Python的直譯器並不保證未來一定會保持相同的順序
+因為字典(dict)是一個無序的結構資料，python只會保持"鍵:直"，不會關注元素的順序排列。
+
+除此之外請注意，items()方法所傳回其實是一個元組，我們只是使用name, team分別取得此所傳回的元組內容。
+'''
+
+#ex.
+
+d = {1:'a', 2:'b', 3:'c', 4:'d'}
+for x in d.items():
+    print(type(x))
+    print(x)
+
+'''
+keys()遍歷字典的鍵
+
+有時候我們不想要取得字典的值(valve), 只想要鍵(keys), python有提供方法keys(), 可以讓我們取得字典的鍵內容
+若是以Ch9_16.py的player字典為實例, 可以使用for迴圈加上keys()方法，如下所示
+
+for name in players.key()
+print('姓名', name)
+
+上述for迴圈會依次將players字典的鍵傳回。
+'''
+
+#Ch9_18.py 列出players字典所有的鍵(key), 此例是所有球員的名字
+players = {
+'Stephen Curry': 'Golden State Warriors',
+'Kevin Durant': 'Golden State Warriors',
+'Lebron James': 'Cleveland Cavaliers',
+'James Harden': 'Houston Rockets',
+'Paul Gasol': 'San Antonio Spurs'
+}
+for name in players.keys():
+    print('姓名', name) 
+
+'''
+其實上述可以省略keys(), 而獲得一樣的結果，未來設計程式是否使用keys(), 可自行決定。
+'''
