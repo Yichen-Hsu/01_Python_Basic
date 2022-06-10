@@ -167,3 +167,15 @@ for name in players.keys():
 '''
 其實上述可以省略keys(), 而獲得一樣的結果，未來設計程式是否使用keys(), 可自行決定。
 '''
+# 重新設計Ch9_19.py，此程式省略了keys()方法，但增加一些書但增加一些輸出問候語.
+
+players = {
+'Stephen Curry': 'Golden State Warriors',
+'Kevin Durant': 'Golden State Warriors',
+'Lebron James': 'Cleveland Cavaliers',
+'James Harden': 'Houston Rockets',
+'Paul Gasol': 'San Antonio Spurs'
+}
+for name in players:
+    print(name) 
+    print(f'Hi! {name} 我喜歡看你在 {players[name]} 的表現')
