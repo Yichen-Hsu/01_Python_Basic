@@ -167,7 +167,7 @@ for name in players.keys():
 '''
 其實上述可以省略keys(), 而獲得一樣的結果，未來設計程式是否使用keys(), 可自行決定。
 '''
-# 重新設計Ch9_19.py，此程式省略了keys()方法，但增加一些書但增加一些輸出問候語.
+# Ch9_19.py 重新設計Ch9_18.py，此程式省略了keys()方法，但增加一些書但增加一些輸出問候語.
 
 players = {
 'Stephen Curry': 'Golden State Warriors',
@@ -177,5 +177,22 @@ players = {
 'Paul Gasol': 'San Antonio Spurs'
 }
 for name in players:
+    print(name) 
+    print(f'Hi! {name} 我喜歡看你在 {players[name]} 的表現')
+
+
+'''
+Python的字典功能並不會處理排序，如果想要遍歷字典同時列出排序結果，可使用sorted()
+'''
+# Ch9_20.py 重新設計Ch9_19.py，但是名字將以排序方式列出結果
+
+players = {
+'Stephen Curry': 'Golden State Warriors',
+'Kevin Durant': 'Golden State Warriors',
+'Lebron James': 'Cleveland Cavaliers',
+'James Harden': 'Houston Rockets',
+'Paul Gasol': 'San Antonio Spurs'
+}
+for name in sorted(players):
     print(name) 
     print(f'Hi! {name} 我喜歡看你在 {players[name]} 的表現')
