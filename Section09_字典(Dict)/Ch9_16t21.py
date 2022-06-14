@@ -196,3 +196,52 @@ players = {
 for name in sorted(players):
     print(name) 
     print(f'Hi! {name} 我喜歡看你在 {players[name]} 的表現')
+
+'''
+python有提供方法values()，可以讓我們取得字典值列表，若是以Ch9_16.py的playres字典為實例，可以使用for迴圈加上value()方法，如下所示:
+'''
+# Ch9_21.py 列出players字典的值列表。
+players = {
+'Stephen Curry': 'Golden State Warriors',
+'Kevin Durant': 'Golden State Warriors',
+'Lebron James': 'Cleveland Cavaliers',
+'James Harden': 'Houston Rockets',
+'Paul Gasol': 'San Antonio Spurs'
+}
+for team in players.values():
+    print(team) 
+
+
+'''
+上述Golden State Warriors 重複出現，在字典的應用中鍵不可有重複，值是可以重複，如果你希望所列出的值不要重複，可以使用set()函數
+
+例如將上例改成:
+    for team in set(palyers.values()):
+'''
+
+'''
+sorted()依值排序與遍歷字典的值
+
+如果有一個oldDict()字典想要依字典的值(value)排序，可以使用下列函數方法，
+這時會傳回新的排序結果串列:
+
+newList = sorted(oldDict.items(), key=lambda item:item[1])
+
+此串列nweList的元素是元組，元組內有2個元素分別是原先字典的鍵和值
+'''
+
+# Ch9_21_1.py 將noodles字典依鍵的值排序，此例是依麵的售價由小到大排序，轉成串列，同時列印。
+noodles = {
+    '牛肉麵':100, '肉絲麵':80, '陽春麵':'60', '大滷麵':90, '麻醬麵':70
+}
+print(noodles)
+noodlesLst = sorted(noodles.items(), key=lambda item:item[1])
+print(noodlesLst)
+
+'''
+從上述執行結果可以看到noodlesLst 是一個串列，串列元素是元組，每個元組有2個元素，串列內容已經依麵的售價由低往高排列。
+如果想要繼續擴充列出最便宜的麵或是最貴的麵，可以使用下列函數:
+
+max(noodles.values())
+min(noodles.values())
+'''
