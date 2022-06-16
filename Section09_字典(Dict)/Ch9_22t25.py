@@ -56,3 +56,46 @@ print('列印編號35到40小兵資料')
 for soldier in armys[34:40]:
     print(soldier)
 
+
+
+'''
+字典內鍵的值是串列
+
+在python的應用中也允許將串列放在字典內，這時串列將是字典某鍵的值。
+如果想要遍歷這類資料結構，需要使用巢狀迴圈和字典的方法items(), 外層迴圈是取得字典的鍵,
+內層迴圈是將含串列的值拆解。下列是定義sports字典的實例:
+
+sports = {
+    'Curry' : ['籃球', '美式足球']
+    'Durrant' : ['棒球']
+    'James' : ['美式足球', '棒球', '籃球']
+}
+
+上述sports字典內含有3個"鍵:值"配對元素，其中值的部分皆是串列。程式設計時外層迴圈配合items()方法，設計如下:
+
+for name, favorite_sport in sports.items():
+    print('%s 喜歡的運動是: ' % name)
+
+上述設計後，鍵內容會傳給name變數，值內容會傳給favorite_sport變數，所以將可以列印鍵內容
+內層迴圈主要是將favorite_sport串列內容拆解，它的設計如下:
+
+for sport in favorite_sport:
+    print(' ', sport)
+
+上述串列內容會隨迴圈傳給sport變數，所以可以列出結果。
+'''
+
+# Ch9_25.py 字典內含串列元素的應用，本程式會先定義內含字串的字典，然後再拆解列印。
+
+sports = {
+    'Curry' : ['籃球', '美式足球'],
+    'urrant' : ['棒球'],
+    'James' : ['美式足球', '棒球', '籃球']
+}
+for name, favorite_sport in sports.items():
+    print(f'{name} 喜歡的運動是: ')
+    for sport in favorite_sport:
+        print(' ', sport) 
+
+
+
