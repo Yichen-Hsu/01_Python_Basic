@@ -98,4 +98,58 @@ for name, favorite_sport in sports.items():
         print(' ', sport) 
 
 
+'''
+在Python的應用中也允許將字典放在字典內，這時字典將是字典某鍵的值。
+假設微信(wechat_account)的帳號是用字典儲存，鍵有兩個值是由另外字典組成，這個內部字典另有3個鍵
+分別是last_name、first_name和city，下列是設計實例。
+'''
+
+# Ch9_26.py 列出字典內含字典的內容
+wechat_account = {
+    'cshung':{
+        'last name':'Hsu',
+        'first name':'Ey',
+        'city':'Taipei'
+    },
+    'Kevin':{
+        'last name':'Lee',
+        'first name':'Pon',
+        'city':'Taipei'
+    }
+}
+for account, account_info in wechat_account.items():
+    print('使用者帳號 = ', account)
+    name = account_info['last name'] + ' ' + account_info['first name']
+    print('姓名: ', name)
+    print('城市: ', account_info['city'])
+
+'''
+while迴圈在字典的應用
+'''
+
+# Ch9_27.py 這是一個市場夢幻旅遊地點調查的實例，此程式會要求輸入名字以及夢幻旅遊地點，然後存入survey_dict字典其中鍵是name, 值是travel_location
+# 輸入完後程式會詢問是否有人要輸入，y表示有, n表示沒有則程式結束，程式結束前會輸出市場調查結果。
+
+survey_dict = {}       #建立市場調查空字典
+market_survey = True   #設定迴圈布林值
+
+# 讀取參加市場調查者姓名和夢幻旅遊景點
+while market_survey:
+    name = input('\n請輸入姓名: ')
+    travel_location = input('夢幻旅遊景點: ')
+    
+    # 將輸入存入survey_dict字典
+    survey_dict[name] = travel_location
+
+    # 可由此決定是否離開市場調查
+    repeat = input('是否有人要參加市場調查(y/n) ')
+    if repeat != 'y':
+        market_survey = False
+
+# 市場調查結束
+print('\n\n以下是市場調查的結果')
+for user, location in survey_dict.items():
+    print(user, '夢幻旅遊景點: ', location)
+
+
 
