@@ -44,3 +44,23 @@ list_dict1 = dict.fromkeys(seq2)
 print(f'字典1{list_dict1}')
 list_dict2 = dict.fromkeys(seq2, 'New York')
 print(f'字典2{list_dict2}')
+
+'''
+get()
+
+搜尋字典的鍵，如果鍵存在則傳回該鍵的值，如果不存在則傳回預設值。
+
+ret_value = mydict.gt(key[, default=none])
+
+key 是要搜尋的鍵，如果找不到key則傳回default的值(如果沒設default值就傳回none)
+
+'''
+
+# Ch9_30.py get()方法的應用
+fruits = {'Apple':20, 'Orange':25}
+ret_value1 = fruits.get('Orange')
+print('Value = ', ret_value1)
+ret_value2 = fruits.get('grape')
+print('Value = ', ret_value2)
+ret_value3 = fruits.get('grape', 10)
+print('Value = ', ret_value3)
