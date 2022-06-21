@@ -64,3 +64,41 @@ ret_value2 = fruits.get('grape')
 print('Value = ', ret_value2)
 ret_value3 = fruits.get('grape', 10)
 print('Value = ', ret_value3)
+
+
+
+'''
+setdefault()
+
+這個方法基本上與get相同，不同之處在於get()方法不會改變字典內容。使用setdefault()方法時若所搜尋的鍵不在
+會將"鍵:值"加入字典，如果有設定預設值則將鍵:預設值加入字典，如果沒有設定預設值則將鍵:None加入字典
+
+ret_value = mydict.setdefault(key[, default=none]) #mydict 是欲搜尋的字典
+
+'''
+
+# Ch9_30_1.py setdefault()方法，鍵在字典內的應用
+# key在字典內
+fruits = {'Apple':20, "Orange":25}
+ret_value = fruits.setdefault('Orange')
+print('value = ', ret_value)
+print('fruits字典', fruits)
+ret_value = fruits.setdefault('Orange')
+print('value = ', ret_value)
+print('fruits字典', fruits)
+
+# Ch9_30_2.py setdefault()方法，鍵不在字典內的應用。
+person = {'name':'John'}
+print('原先字典內容', person)
+
+# age鍵不存在
+age =person.setdefault('age')
+print('增加age鍵', person)
+print('age = ', age)
+
+# sex鍵不存在
+sex = person.setdefault('gender', 'Male')
+print('增加gender鍵', person)
+print('gender = ', sex)
+
+
