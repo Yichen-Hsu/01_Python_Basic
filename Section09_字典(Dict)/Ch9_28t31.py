@@ -101,4 +101,69 @@ sex = person.setdefault('gender', 'Male')
 print('增加gender鍵', person)
 print('gender = ', sex)
 
+'''
+有時我們想要製作更大型的字典資料結構，例如: 字典的鍵是地球的洲名，鍵的值是該洲的名稱，可以參考以下實例。
+'''
 
+# ex1 字典的元素的值是串列
+
+asia = {'Beijing', 'Hongkong', 'Tokyo'}
+usa = {'Chicago', 'New York', 'Hawaii', 'Los Angeles'}
+europe = {'Paris', 'London', 'Zurich'}
+world = {'Asia': asia, 'USA':usa, 'Europe':europe}
+type(world)
+print(world)
+
+'''
+在設計大型程式時，必須記住字典的鍵是不可變的，所以不可以將串列、字典或是下一章將介紹的集合當作字典的鍵，不過可以將元組當作字典的鍵
+例如:我們在4-7-4節可以知道地球每個位置是用(經度, 緯度)當作標記，所以我們可以使用經緯度當作字典的鍵。
+'''
+
+# ex2 使用經緯度當作字典的鍵，值是地點名稱。
+loc = {
+    (25.0452, 121.5168):'台北車站',
+    (22.2838, 114.1731):'紅磡車站'
+}
+type(loc)
+print(loc)
+
+'''
+傳統方式分析文章的文字與字數
+'''
+
+# Ch9_31.py 這個專案主要是設計一個程式，可以記錄一段英文字，或是一篇文章所有單字以及每隔單字的出現次數，這個程式會用單字當作字典的鍵(key)，用值(value)當作該單字出現的次數。
+
+song = '''Are you sleeping, are you sleeping. Brother John, Brother John?
+Morning bells are ringing morning bells are ringing.
+Ding ding ding, Ding ding ding
+'''
+mydict = {}
+print('原始歌曲')
+print(song)
+
+# 以下是將歌曲大寫字母勸都改成小寫
+songlower = song.lower()
+print('小寫歌曲')
+print(songlower)
+
+# 將歌曲的標點符號用空字元取代
+for ch in songlower:
+    if ch in ".,?":
+        songlower = songlower.replace(ch, '')
+print('不再有標點符號的歌曲')
+print(songlower)
+
+# 將歌曲字串轉成串列
+songlist = songlower.split()
+print('以下是歌曲串列')
+print(songlist)
+
+# 將歌曲串列處理成字典
+for wd in songlist:
+    if wd in mydict:
+        mydict[wd] += 1
+    else:
+        mydict[wd] = 1
+
+print('以下是執行結果')
+print(mydict)
