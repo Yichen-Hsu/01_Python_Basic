@@ -167,3 +167,13 @@ for wd in songlist:
 
 print('以下是執行結果')
 print(mydict)
+
+'''
+字典生成式
+
+新字典 = {鍵運算式:值運算式 for 運算式 in 可迭代物件}
+'''
+# Ch9_32.py 使用字典生成式紀錄單字deepstone, 每個字母出現的次數
+word = 'deepstone'
+alphabetCount = {alphabet:word.count(alphabet) for alphabet in word}
+print(alphabetCount)
