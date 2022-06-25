@@ -177,3 +177,13 @@ print(mydict)
 word = 'deepstone'
 alphabetCount = {alphabet:word.count(alphabet) for alphabet in word}
 print(alphabetCount)
+
+'''
+上述程式的執行原理是將每個單字出現的次數當作是鍵的值，當然如果硬要挑起上述程式的缺點，就在對於字母e而言，在for迴圈中會被執行3次。
+
+當了解Ch9_32.py後若是再看Ch9_31.py這個程式的重點是將串列改為字典同時計算每個單字出現的次數
+'''
+
+# Ch9_33.py 使用串列生成方式重新設計Ch9_31.py
+mydict = {wd:songlist.count(wd) for wd in songlist}
+print(mydict)
